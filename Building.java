@@ -4,6 +4,7 @@ public class Building {
     protected String address;
     protected int nFloors;
     protected int activeFloor = -1; // Default value indicating we are not inside this building
+    protected boolean hasElevator;
 
     /* Default constructor */
     public Building() {
@@ -54,6 +55,10 @@ public class Building {
         return this; // Return a pointer to the current building
     }
 
+    /**
+     * Exit function
+     * @return null
+     */
     public Building exit() {
         if (this.activeFloor == -1) {
             throw new RuntimeException("You are not inside this Building. Must call enter() before exit().");
